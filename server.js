@@ -4,7 +4,7 @@ const app = express();
 app.disable('x-powered-by');
 
 const PORT = process.env.PORT || 3000;
-const BASE = (process.env.WASEET_BASE || 'https://api.alwaseet-iq.net').replace(/\\/$/, '');
+const BASE = (process.env.WASEET_BASE || 'https://api.alwaseet-iq.net').replace(/\/+$/, '');
 const TOKEN = process.env.WASEET_MERCHANT_TOKEN || '';
 const AUTH_MODE = (process.env.WASEET_AUTH_MODE || 'query').toLowerCase(); // query or bearer
 const TEST_KEY = process.env.TEST_KEY || '';
